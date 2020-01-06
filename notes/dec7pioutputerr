@@ -1,0 +1,134 @@
+root@bobo:/# python3.5
+Python 3.5.3 (default, Sep 27 2018, 17:25:39) 
+[GCC 6.3.0 20170516] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> from time import sleep
+>>> from picamera import PiCamera
+>>> 
+>>> camera = PiCamera()
+>>> camera.resolution = (1024, 768)
+>>> camera.start_preview()
+<picamera.renderers.PiPreviewRenderer object at 0x769f0990>
+>>> # Camera warm-up time
+... sleep(2)
+>>> camera.capture('foo.jpg')
+>>> from io import BytesIO
+>>> from time import sleep
+>>> from picamera import PiCamera
+>>> 
+>>> # Create an in-memory stream
+... my_stream = BytesIO()
+>>> camera = PiCamera()
+mmal: mmal_vc_port_enable: failed to enable port vc.null_sink:in:0(OPQV): ENOSPC
+mmal: mmal_port_enable: failed to enable connected port (vc.null_sink:in:0(OPQV))0x207a610 (ENOSPC)
+mmal: mmal_connection_enable: output port couldn't be enabled
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/picamera/camera.py", line 433, in __init__
+    self._init_preview()
+  File "/usr/lib/python3/dist-packages/picamera/camera.py", line 513, in _init_preview
+    self, self._camera.outputs[self.CAMERA_PREVIEW_PORT])
+  File "/usr/lib/python3/dist-packages/picamera/renderers.py", line 558, in __init__
+    self.renderer.inputs[0].connect(source).enable()
+  File "/usr/lib/python3/dist-packages/picamera/mmalobj.py", line 2212, in enable
+    prefix="Failed to enable connection")
+  File "/usr/lib/python3/dist-packages/picamera/exc.py", line 184, in mmal_check
+    raise PiCameraMMALError(status, prefix)
+picamera.exc.PiCameraMMALError: Failed to enable connection: Out of resources
+>>> camera.start_preview()
+<picamera.renderers.PiPreviewRenderer object at 0x75d5da70>
+>>> # Camera warm-up time
+... sleep(2)
+>>> camera.capture(my_stream, 'jpeg')
+>>> camera.capture(my_stream, 'jpeg')
+>>> from io import BytesIO
+>>> from time import sleep
+>>> from picamera import PiCamera
+>>> 
+>>> # Create an in-memory stream
+... my_stream = BytesIO()
+>>> camera = PiCamera()
+mmal: mmal_vc_port_enable: failed to enable port vc.null_sink:in:0(OPQV): ENOSPC
+mmal: mmal_port_enable: failed to enable connected port (vc.null_sink:in:0(OPQV))0x207d620 (ENOSPC)
+mmal: mmal_connection_enable: output port couldn't be enabled
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/picamera/camera.py", line 433, in __init__
+    self._init_preview()
+  File "/usr/lib/python3/dist-packages/picamera/camera.py", line 513, in _init_preview
+    self, self._camera.outputs[self.CAMERA_PREVIEW_PORT])
+  File "/usr/lib/python3/dist-packages/picamera/renderers.py", line 558, in __init__
+    self.renderer.inputs[0].connect(source).enable()
+  File "/usr/lib/python3/dist-packages/picamera/mmalobj.py", line 2212, in enable
+    prefix="Failed to enable connection")
+  File "/usr/lib/python3/dist-packages/picamera/exc.py", line 184, in mmal_check
+    raise PiCameraMMALError(status, prefix)
+picamera.exc.PiCameraMMALError: Failed to enable connection: Out of resources
+>>> camera.start_preview()
+<picamera.renderers.PiPreviewRenderer object at 0x766d0a90>
+>>> # Camera warm-up time
+... sleep(2)
+>>> camera.capture(my_stream, 'jpeg')
+>>> from time import sleep
+>>> from picamera import PiCamera
+>>> 
+>>> # Explicitly open a new file called my_image.jpg
+... my_file = open('my_image.jpg', 'wb')
+>>> camera = PiCamera()
+mmal: mmal_vc_port_enable: failed to enable port vc.null_sink:in:0(OPQV): ENOSPC
+mmal: mmal_port_enable: failed to enable connected port (vc.null_sink:in:0(OPQV))0x20805e0 (ENOSPC)
+mmal: mmal_connection_enable: output port couldn't be enabled
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/picamera/camera.py", line 433, in __init__
+    self._init_preview()
+  File "/usr/lib/python3/dist-packages/picamera/camera.py", line 513, in _init_preview
+    self, self._camera.outputs[self.CAMERA_PREVIEW_PORT])
+  File "/usr/lib/python3/dist-packages/picamera/renderers.py", line 558, in __init__
+    self.renderer.inputs[0].connect(source).enable()
+  File "/usr/lib/python3/dist-packages/picamera/mmalobj.py", line 2212, in enable
+    prefix="Failed to enable connection")
+  File "/usr/lib/python3/dist-packages/picamera/exc.py", line 184, in mmal_check
+    raise PiCameraMMALError(status, prefix)
+picamera.exc.PiCameraMMALError: Failed to enable connection: Out of resources
+>>> camera.start_preview()
+<picamera.renderers.PiPreviewRenderer object at 0x75d5dc90>
+>>> sleep(2)
+>>> camera.capture(my_file)
+>>> # At this point my_file.flush() has been called, but the file has
+... # not yet been closed
+... my_file.close()
+>>> 
+>>> quit()
+root@bobo:/# ls -l -a
+total 9607
+drwxr-xr-x  23 root root    4096 Dec  7 15:29 .
+drwxr-xr-x  23 root root    4096 Dec  7 15:29 ..
+drwxr-xr-x   2 root root    4096 Dec  7 14:55 bin
+drwxr-xr-x   3 root root    2560 Dec 31  1969 boot
+drwxr-xr-x   2 root root    4096 Oct  9  2018 debootstrap
+drwxr-xr-x  14 root root    3500 Dec  7 00:18 dev
+-rw-r--r--   1 root root 4239282 Oct 19 22:01 door1.jpg
+-rw-r--r--   1 root root 4577601 Oct 19 18:38 door.jpg
+drwxr-xr-x 111 root root    4096 Dec  7 13:50 etc
+-rw-r--r--   1 root root  466501 Dec  7 15:22 foo.jpg
+drwxr-xr-x   4 root root    4096 Aug 26 02:36 home
+drwxr-xr-x  16 root root    4096 Dec  7 13:50 lib
+drwx------   2 root root   16384 Oct  9  2018 lost+found
+drwxr-xr-x   4 root root    4096 Oct  9  2018 media
+drwxr-xr-x   2 root root    4096 Oct  9  2018 mnt
+-rw-r--r--   1 root root  458908 Dec  7 15:29 my_image.jpg
+drwxr-xr-x   6 root root    4096 Oct  9  2018 opt
+-rw-r--r--   1 root root       0 Oct 14 23:29 Pipfile
+dr-xr-xr-x 124 root root       0 Dec 31  1969 proc
+drwxr-xr-x   2 root root    4096 Apr 14  2019 __pycache__
+drwx------  28 root root    4096 Dec  7 15:29 root
+drwxr-xr-x  26 root root     800 Dec  7 13:06 run
+drwxr-xr-x   2 root root    4096 Dec  7 13:50 sbin
+drwxr-xr-x   2 root root    4096 Oct  9  2018 srv
+dr-xr-xr-x  12 root root       0 Dec  7 13:52 sys
+drwxrwxrwt   9 root root    4096 Dec  7 15:26 tmp
+drwxr-xr-x  11 root root    4096 Oct  9  2018 usr
+drwxr-xr-x  12 root root    4096 Oct 21 09:12 var
+root@bobo:/# 
