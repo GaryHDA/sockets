@@ -21,4 +21,3 @@ def bob(x,TCP_PORT):
         else:
             break
     conn.close
-
