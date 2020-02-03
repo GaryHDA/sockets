@@ -6,6 +6,15 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+pandas = "*"
+scipy = "*"
+numpy = "*"
+jupyter = "*"
+notebook = "*"
+requests = "*"
+ipython = "*"
+socket = "*"
+time = "*"
 
 [requires]
 python_version = "3.6"
