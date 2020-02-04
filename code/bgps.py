@@ -13,13 +13,13 @@ for i in range (0,6):
 
   s = socket.socket()
   
-  Ports = Port[i]
+  Ports = Ports[i]
   
   print ('This Is the Banner for the Port')
   
   print (Ports)
   
-  s.connect (("192.168.1.91", Port))
+  s.connect (("192.168.1.91", Ports))
   
   answer = s.recv (1024)
   
