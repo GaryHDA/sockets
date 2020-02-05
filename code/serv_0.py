@@ -14,5 +14,5 @@ def serverfunction(host, port, listen):
     print('Got connection from',addr)
     print(type(c))
     print(c)
-    c.send(b'Thank you for connecting')
+    c.send(b'Welcome back!')
     c.close()
