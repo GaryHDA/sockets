@@ -1,7 +1,9 @@
 #! usr/bin/python3
 
 import socket
-
+"""
+This is the script for asking for data from server.  
+"""
 def clientfunction(host, port):
   s = socket.socket()
   host = host
