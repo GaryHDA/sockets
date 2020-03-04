@@ -1,20 +1,34 @@
-# sockets
-The communication part of the Owl Box Project, here we establish the prototypes' network communication sockets with 
-Python 3.5 and 3.6.
+owlbox project plan:
+
+-description
 
 
 
-two RPi 3 model B running Raspian Stretch
-one picamera
-and one laptop running "Ubuntu 18.10"
+The project will create a network of barn owl nesting habitats within the crop fields of an urban farm for
+the purposes of pest control, public education and IoT node prototyping.Each box will house a micro computer, 
+two cameras(one facing down into the nest area, the other facing outwards to the fields), and a power source such as a 
+battery pack and solar.
+A total of five owlboxes will be  placed among the crops to provide an overlapping coverage of predator range.The targeted prey 
+are gophers and voles.
 
-Identical environments were set up on each device using Pipenv v2018.11.26
-From within the virtual environment, all subsequent work is done, on every device, from just the laptop via ssh.
 
-The RPi3Bs were selected after considering:
+Project components include:
 
-Economy- at 32$ each, plus 25$ for camera component, and another 20$ for the pair of microSD cards.
+-Habitat boxes/device housing
 
-Utility- built-in wifi, bluetooth, 4 usb ports, 24 GPIO pins, ethernet port.
+-Network interface devices in a weatherproof enclosure(includes all necessary hardware,such as RPi's,cameras and cables)
 
-Versatility- for various projects, the RPi is a great starting point.
+-Software will include all device firmware,operating system,web applications,and network scripting(Raspian,Linux,Apache2,Python3.6-3.7,etc.)
+
+-Power supply and management(includes any batteries,solar panels and the necessary power regulation system)
+
+-Mounting systems,such as durable masts, or poles(includes weatherproof roof structures,etc.)
+  
+
+-Timeline for implementation of project phases
+
+1.Planning phase to determine all project needs,such as materials lists,site selection,budget and time allocation.
+2.Build phase(includes prototype assembly, and testing)
+3.Installation phase
+4.Project review phase  
+
