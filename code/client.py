@@ -11,5 +11,3 @@ def clientfunction(host, port):
   s.connect((host, port))
   print(s.recv(4096))
   s.close()
-  
-avariable = ['avariable']  
