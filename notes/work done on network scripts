@@ -1,0 +1,5 @@
+The process of writing/modifying the network communications portion of the ob project is documented here.
+Using Python3.5, from each RPi, and 3.6 from our laptop 'Len', and all from identical virtual environments(venvs), that is, 
+each device using identical requirements.txt files or matching lists of dependancies in configuring their venvs thus insuring that
+no conflicts occur,i.e. app versions,etc.
+Then we established communications between the three devices using ssh, at first on a local area network.
