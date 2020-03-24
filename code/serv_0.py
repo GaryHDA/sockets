@@ -15,6 +15,6 @@ def serverfunction(host, port, listen, name):
     print('Got connection from',addr)
     print(type(c))
     print(c)
-    takeapicture.takeapicture(name)
+    # takeapicture.takeapicture(name)
     c.send(b'Welcome back again!')
     c.close()
