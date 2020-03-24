@@ -12,7 +12,7 @@ def clientfunction(host, port):
   host = host
   port = port
   s.connect((host, port))
-  print(s.recv(4096))
+  print(s.recv())
   s.close()
 def printme(name):
   x = 'hello {}'.format(name)
