@@ -30,5 +30,27 @@ Project components include:
 1.Planning phase to determine all project needs,such as materials lists,site selection,budget and time allocation.
 2.Build phase(includes prototype assembly, and testing)
 3.Installation phase
-4.Project review phase  
+4.Project review phase
+
+### Starting the owl box cam
+
+Required material:
+
+1. rasberry pi3B+
+2. raspian stretch
+3. USB cable or battery for power
+4. Network - Wifi connection
+5. Computer linux or other
+6. python 3 or higher
+7. open ssh on both devices
+8. keyborad and monitor for rpi
+
+### Procedure
+
+1. power up pi: usb connector
+2. plugin: monit
+3. connect to netowrk
+   1. config network settings
+   2. 
+
 
